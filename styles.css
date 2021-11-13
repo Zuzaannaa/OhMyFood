@@ -7,6 +7,14 @@ header {
   margin: 0;
 }
 
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  color: black;
+}
+
 /*---logo---*/
 
 .logo {
@@ -142,7 +150,7 @@ ol li::before {
 .restaurants {
   background-color: rgb(243, 243, 243);
   padding-bottom: 50px;
-  margin-bottom: 40px;
+  margin-bottom: 0;
 }
 
 .restaurants-h {
@@ -165,7 +173,7 @@ ol li::before {
 
 .res-image {
   width: 90vw;
-  height: 350px;
+  height: 380px;
   border-radius: 25px 25px 0 0;
   object-fit: cover;
 }
@@ -228,4 +236,65 @@ i[class="far fa-heart"]:hover + i[class="fas fa-heart"] {
   font-size: 36px;
   margin-top: 10px;
   margin-bottom: 15px;
+}
+
+/*---footer---*/
+
+.index-footer {
+  background-color: rgb(65, 60, 60);
+  margin: 0;
+}
+
+.footer-logo {
+  padding: 40px 0 20px 40px;
+  font-family: "Shrikhand";
+  font-size: 40px;
+  color: white;
+  margin-top: 0;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 30px;
+  font-family: "Roboto";
+  color: white;
+  padding: 0px 0 50px 40px;
+}
+
+.footer-links a:link {
+  text-decoration: none;
+  padding-bottom: 15px;
+}
+
+.footer-links a:visited {
+  color: white;
+}
+
+i[class="fas fa-utensils"] {
+  padding-right: 20px;
+}
+
+/*----PALETTE----*/
+
+.palette-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.arrow-back {
+  padding-right: 20%;
+}
+
+i[class="fas fa-arrow-left"] {
+  font-size: 50px;
+  padding: 20px 30% 20px 20px;
+}
+
+.palette-logo {
+  width: 45%;
+  height: 45%;
+  padding: 20px 0 20px 0;
 }
