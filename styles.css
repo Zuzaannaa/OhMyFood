@@ -7,11 +7,15 @@ header {
   margin: 0;
 }
 
+/*---logo---*/
+
 .logo {
   display: flex;
   justify-content: center;
   margin: 40px 0 40px 0;
 }
+
+/*---location---*/
 
 .location {
   display: flex;
@@ -34,6 +38,8 @@ i[class="fas fa-map-marker-alt"] {
   padding-top: 20px;
   margin-right: 10px;
 }
+
+/*---booking---*/
 
 .book {
   display: flex;
@@ -64,11 +70,162 @@ i[class="fas fa-map-marker-alt"] {
   font-size: 4vw;
   font-weight: bold;
   color: white;
-  background-color: #ff79da;
+  background-color: #9356dc;
   border-radius: 50px;
   border-color: rgb(243, 243, 243);
   padding: 30px 30px 30px 30px;
   margin: 0 22% 100px 22%;
-  box-shadow: 10px 10px 10px rgb(192, 189, 189),
-    -20px -15px 25px 10px #9356dc inset;
+  box-shadow: 2px 10px 10px 3px rgb(192, 189, 189),
+    8px 17px 20px -5px #ff79da inset;
+}
+
+.explore:hover {
+  color: rgb(245, 245, 245);
+  box-shadow: 2px 10px 10px 3px rgb(212, 212, 212),
+    8px 17px 20px -5px #eca4d8 inset;
+}
+
+/*---HowItWorks---*/
+
+.works-h {
+  font-family: "Roboto";
+  font-size: 45px;
+  margin: 70px 0 60px 30px;
+}
+
+.list-card {
+  font-family: "Roboto";
+  font-size: 35px;
+  width: 80vw;
+  border-radius: 45px;
+  background-color: rgb(243, 243, 243);
+  margin: 40px 10px 50px 10px;
+  padding: 50px 40px 50px 40px;
+  box-shadow: 0 7px 16px 5px rgba(218, 218, 218, 0.75);
+}
+
+i[class="fas fa-mobile-alt"],
+i[class="fas fa-list-ul"],
+i[class="fas fa-store"] {
+  color: grey;
+  padding-right: 50px;
+  padding-left: 30px;
+}
+
+ol {
+  list-style: none;
+}
+
+ol li {
+  counter-increment: my-awesome-counter;
+  position: relative;
+}
+
+ol li::before {
+  content: counter(my-awesome-counter);
+  color: #ffffff;
+  font-size: 30px;
+  position: absolute;
+  --size: 50px;
+  left: calc(-1 * var(--size) 35px);
+  line-height: var(--size);
+  width: var(--size);
+  height: var(--size);
+  background: #9356dc;
+  border-radius: 50%;
+  text-align: center;
+  margin-left: 15px;
+}
+
+/*---restaurants---*/
+
+.restaurants {
+  background-color: rgb(243, 243, 243);
+  padding-bottom: 50px;
+  margin-bottom: 40px;
+}
+
+.restaurants-h {
+  font-family: "Roboto";
+  font-size: 45px;
+  margin: 70px 0 60px 30px;
+  padding-top: 50px;
+}
+
+.restaurants-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: 25px;
+  margin: 48px;
+  background-color: white;
+  width: 90vw;
+  box-shadow: 0 7px 16px 5px rgba(218, 218, 218, 0.75);
+}
+
+.res-image {
+  width: 90vw;
+  height: 350px;
+  border-radius: 25px 25px 0 0;
+  object-fit: cover;
+}
+
+.new {
+  font-family: "Roboto";
+  color: rgb(75, 124, 82);
+  position: absolute;
+  top: 8px;
+  right: 25px;
+  background-color: #99e2d0;
+  border-radius: 12px;
+  padding: 15px 40px 15px 40px;
+  font-size: 30px;
+}
+
+i[class="far fa-heart"] {
+  position: absolute;
+  bottom: 35px;
+  right: 30px;
+  font-size: 65px;
+  color: rgb(163, 159, 159);
+}
+
+i[class="far fa-heart"]:hover {
+  display: none;
+}
+
+i[class="fas fa-heart"] {
+  position: absolute;
+  bottom: 35px;
+  right: 30px;
+  font-size: 65px;
+  visibility: hidden;
+}
+
+i[class="far fa-heart"]:hover + i[class="fas fa-heart"] {
+  position: absolute;
+  bottom: 35px;
+  right: 30px;
+  font-size: 65px;
+  color: #9356dc;
+  text-shadow: 0px 4px 4px rgb(119, 72, 72), 0 0 0 rgb(167, 39, 39),
+    0px 4px 4px rgb(153, 128, 128);
+  visibility: visible;
+}
+
+.res-card-h {
+  font-family: "Roboto";
+  font-size: 38px;
+  padding-left: 25px;
+  margin-bottom: 0;
+}
+
+.res-card-p {
+  font-family: "Roboto", sans-serif;
+  color: rgb(83, 80, 80);
+  padding-left: 25px;
+  padding-bottom: 25px;
+  font-size: 36px;
+  margin-top: 10px;
+  margin-bottom: 15px;
 }
