@@ -218,6 +218,8 @@ i[class="far fa-heart"] {
 
 i[class="far fa-heart"]:hover {
   display: none;
+  visibility: hidden;
+  z-index: 0;
 }
 
 i[class="fas fa-heart"] {
@@ -226,6 +228,8 @@ i[class="fas fa-heart"] {
   right: 30px;
   font-size: 65px;
   visibility: hidden;
+  display: none;
+  opacity: 0;
 }
 
 i[class="far fa-heart"]:hover + i[class="fas fa-heart"] {
@@ -233,10 +237,18 @@ i[class="far fa-heart"]:hover + i[class="fas fa-heart"] {
   bottom: 35px;
   right: 30px;
   font-size: 65px;
-  color: #9356dc;
-  text-shadow: 0px 4px 4px rgb(119, 72, 72), 0 0 0 rgb(167, 39, 39),
-    0px 4px 4px rgb(153, 128, 128);
+  background: linear-gradient(130deg, #9356dc, #ff79da) 0% 0% / 100% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: 2s linear 0s heartFill;
   visibility: visible;
+  display: block;
+  opacity: 1;
+  transition: opacity 2s;
+  z-index: 200;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .res-card-h {
@@ -366,10 +378,19 @@ i[class="fas fa-arrow-left"] {
   right: 5vw;
   font-size: 65px;
   color: rgb(150, 147, 147);
+
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .palette-heart:hover {
-  display: none;
+  visibility: hidden;
+
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  z-index: 0;
 }
 
 .palette-color-heart {
@@ -378,28 +399,35 @@ i[class="fas fa-arrow-left"] {
   right: 5vw;
   font-size: 65px;
   visibility: hidden;
+  opacity: 0;
+
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .palette-heart:hover + .palette-color-heart {
   position: absolute;
-  bottom: 35px;
-  right: 30px;
+  top: 10vw;
+  right: 5vw;
   font-size: 65px;
+  opacity: 1;
   visibility: visible;
   background: linear-gradient(130deg, #9356dc, #ff79da) 0% 0% / 100% 100%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation-name: heartFill;
-  animation-fill-mode: forwards;
-}
+  animation: 2s linear 0s heartFill;
+  transition: opacity 1s;
+  z-index: 200;
 
-@keyframes heartFill {
-  from {
-    transform: scale(0);
-  }
-  to {
-    transform: scale(1);
-  }
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+} 
+
+.hearts {
+  width: 100vw;
+  height: 100vw;
 }
 
 .entrees-title {
@@ -429,15 +457,21 @@ i[class="fas fa-arrow-left"] {
   margin-top: 50px;
   box-shadow: 0 7px 16px 5px rgba(218, 218, 218, 0.75);
   overflow: hidden;
-  animation: 2s ease-out 0s 1 slide-menu-card;
+  animation: 4s ease-out 0s load-menu-card;
 }
 
-@keyframes slide-menu-card {
-  0% {
-    transform: translateX(200%);
+@keyframes load-menu-card {
+  /*0% {
+    transform: translateY(200%);
   }
   100% {
-    transform: translateX(0%);
+    transform: translateY(0%);
+  }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 
@@ -481,17 +515,15 @@ i[class="fas fa-arrow-left"] {
   padding-top: 8vw;
 }
 
-/*.checkmark {
-  display: flex;
-  justify-content: center;
-  background-color: #99e2d0;
-  display: none;
-  margin-left: 71vw;
-}*/
-
 i[class="fas fa-check-circle"] {
   color: white;
   font-size: 8vw;
+}
+
+.entrees-menu-card:hover .entrees-menu-h {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .entrees-menu-card:hover .entrees-menu-p {
@@ -500,7 +532,7 @@ i[class="fas fa-check-circle"] {
   text-overflow: ellipsis;
 }
 
-.entrees-menu-card:hover .entrees-menu-price {
+.entrees-menu-card:hover .entrees-menu-price .checkmark {
   padding-left: 15px;
   animation: slide-price 1s;
   animation-fill-mode: forwards;
@@ -560,21 +592,29 @@ i[class="fas fa-check-circle"] {
 }
 
 .order {
-  align-items: center;
-  text-align: center;
+  display: block;
+  font-size: 4vw;
+  font-weight: bold;
+  color: white;
+  background-image: linear-gradient(to top left, #9356dc, #ff79da);
+  border-radius: 50px;
+  border-color: transparent;
   padding: 30px 85px 30px 85px;
   margin: 100px 30vw 100px 30vw;
+  box-shadow: 2px 10px 10px 3px rgb(192, 189, 189),
+    8px 17px 20px -5px #ff79da inset;
+  transition: transform 2s;
 }
 
 .order:hover {
-  color: rgb(245, 245, 245);
-  box-shadow: 2px 10px 10px 3px rgb(212, 212, 212),
-    8px 17px 20px -5px #eca4d8 inset;
+  transform: scale(1);
+  background-image: linear-gradient(to top left, #a16be0, #ff93e1);
+  box-shadow: 2px 10px 10px 3px rgba(46, 35, 53, 0.4);
 }
 
 /*---LOADER---*/
 
-/*
+
 .loader {
   border-top: 40px solid #9356dc;
   border-right: 40px solid #ff79da;
@@ -595,7 +635,7 @@ i[class="fas fa-check-circle"] {
   100% {
     transform: rotate(360deg);
   }
-} */
+} 
 
 .loader {
   display: flex;
@@ -679,7 +719,7 @@ i[class="fas fa-check-circle"] {
 
 /*---Desktop---*/
 
-@media (min-width: 768px) and (max-width: 4000px) {
+@media (min-width: 768px) and (max-width: 1440px) {
   .wrapper {
     display: flex;
     flex-direction: row;
@@ -693,6 +733,10 @@ i[class="fas fa-check-circle"] {
     justify-content: flex-start;
     width: 40vw;
     margin-left: 30px;
+  }
+
+  #logo {
+    width: 70%;
   }
 
   .location {
@@ -723,7 +767,7 @@ i[class="fas fa-check-circle"] {
   .book-h {
     display: flex;
     justify-content: center;
-    font-size: 35px;
+    font-size: 30px;
     margin-left: 30px;
   }
 
@@ -732,15 +776,15 @@ i[class="fas fa-check-circle"] {
     justify-content: center;
     font-size: 25px;
     margin-left: 30px;
-    padding: 0;
+    padding: 0 0 20px 0;
   }
 
   .explore {
     display: flex;
     justify-content: center;
-    font-size: 25px;
+    font-size: 20px;
     margin: 0;
-    width: 35vw;
+    width: 30vw;
   }
 
   .explore-b {
@@ -752,6 +796,7 @@ i[class="fas fa-check-circle"] {
   .works-h {
     display: flex;
     justify-content: center;
+    font-size: 30px;
   }
 
   .list-list {
@@ -762,7 +807,7 @@ i[class="fas fa-check-circle"] {
   .list-card {
     width: 25vw;
     margin: auto;
-    font-size: 18px;
+    font-size: 15px;
   }
 
   .restaurants {
@@ -773,6 +818,7 @@ i[class="fas fa-check-circle"] {
   .restaurants-h {
     display: flex;
     justify-content: center;
+    font-size: 30px;
   }
 
   .cards-1 {
@@ -828,7 +874,6 @@ i[class="fas fa-check-circle"] {
   }
 
   footer {
-    width: 95vw;
     border-radius: 12px;
   }
 
@@ -842,5 +887,103 @@ i[class="fas fa-check-circle"] {
 
   .circle-2 {
     display: none;
+  }
+
+  /*----Restaurants----*/
+
+  .palette-header {
+    display: flex;
+    justify-content: space-between;
+  }
+  .arrow-back {
+    padding: 20px 20% 20px 20px;
+  }
+
+  i[class="fas fa-arrow-left"] {
+    font-size: 75px;
+  }
+
+  .palette-logo {
+    width: 30%;
+    height: 30%;
+    margin: 40px 40px 0 0;
+  }
+
+  .palette-title {
+    width: 94vw;
+    margin: 0 3vw 0 3vw;
+    padding-top: 80px;
+    margin-top: 20%;
+  }
+
+  .pallette-image {
+    width: 94vw;
+    margin: 0 3vw 0 3vw;
+    height: 15%;
+    border-radius: 35% 35% 0 0;
+  }
+
+  #enchanted-image {
+    height: 12%;
+  }
+
+  .menu-h {
+    font-size: 50px;
+  }
+
+  .menu-card {
+    width: 94vw;
+    margin: 0 3vw 0 3vw;
+  }
+
+  .entrees-title {
+    font-size: 45px;
+  }
+
+  .entrees-menu-card {
+    width: 29vw;
+  }
+
+  .entrees-menu-cards {
+    display: flex;
+    justify-content: center;
+  }
+
+  .entrees-menu-h {
+    font-size: 30px;
+  }
+
+  .entrees-menu-p {
+    font-size: 25px;
+  }
+
+  .entrees-menu-price {
+    font-size: 25px;
+  }
+
+  .checkmark {
+    position: absolute;
+    right: 2;
+    top: 2.2;
+    z-index: 9;
+    background-color: #99e2d0;
+    border-radius: 0 40px 40px 0;
+    display: none;
+    padding-bottom: 8vw;
+    padding-left: 20px;
+    padding-top: 3vw;
+    padding-right: 30px;
+  }
+
+  i[class="fas fa-check-circle"] {
+    font-size: 4vw;
+  }
+
+  .order {
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 30px;
   }
 }
