@@ -511,10 +511,10 @@ i[class="fas fa-check-circle"] {
 
 .entrees-menu-card:hover .entrees-menu-h {
   white-space: nowrap;
+  padding-right: 30%;
   overflow: hidden;
   text-overflow: ellipsis;
-  padding-right: 50%;
-  animation: slide-price 1s;
+  animation: slide-h 1s;
 }
 
 .entrees-menu-card:hover .entrees-menu-p {
@@ -538,6 +538,14 @@ i[class="fas fa-check-circle"] {
   }
 }
 
+@keyframes slide-h {
+  from {
+    padding-right: 0%;
+  }
+  to {
+    padding-right: 30%;
+  }
+}
 .entrees-menu-card:hover .checkmark {
   display: flex;
   border-top-right-radius: 20px;
