@@ -253,6 +253,7 @@ i[class="far fa-heart"]:hover + i[class="fas fa-heart"] {
   visibility: visible;
   background: linear-gradient(130deg, #9356dc, #ff79da) 0% 0% / 100% 100%;
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: 2s linear 0s heartFill;
   transition: opacity 1s;
@@ -427,6 +428,7 @@ i[class="fas fa-arrow-left"] {
   visibility: visible;
   background: linear-gradient(130deg, #9356dc, #ff79da) 0% 0% / 100% 100%;
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: 2s linear 0s heartFill;
   transition: opacity 1s;
