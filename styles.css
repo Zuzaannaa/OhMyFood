@@ -16,6 +16,10 @@ a:visited {
   color: black;
 }
 
+a:active {
+  text-decoration: none;
+}
+
 a[href^="mailto"] {
   color: white;
 }
