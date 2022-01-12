@@ -402,6 +402,10 @@ i[class="fas fa-arrow-left"] {
   z-index: 0;
 }
 
+#enchanted-image {
+  height: 12%;
+}
+
 .palette-title {
   position: relative;
   z-index: 1;
